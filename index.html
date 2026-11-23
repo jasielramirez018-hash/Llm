@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autocompletado SQL</title>
+  <link rel="stylesheet" href="caca.css">
+</head>
+<body>
+  <main class="app">
+    <header class="cabecera">
+      <div>
+        <span class="eyebrow">ASISTENTE SQL</span>
+        <h1>Escribe tu consulta</h1>
+      </div>
+      <button id="btnLimpiar" class="btn-limpiar" type="button" aria-label="Limpiar consulta">
+        <span aria-hidden="true">×</span> Limpiar
+      </button>
+    </header>
+
+    <section class="editor-panel" aria-label="Editor de consultas">
+      <div class="barra-editor">
+        <span class="lenguaje">SQL</span>
+      </div>
+      <textarea id="editor" spellcheck="false" autocomplete="off"
+        placeholder="Ejemplo: SELECT * FROM clientes WHERE"></textarea>
+    </section>
+
+    <section class="sugerencias" aria-labelledby="titulo-sugerencias">
+      <div class="titulo-fila">
+        <h2 id="titulo-sugerencias">Sugerencias</h2>
+        <span id="cantidad" class="cantidad">0 opciones</span>
+      </div>
+      <div id="botones" class="chips" role="listbox" aria-label="Sugerencias SQL"></div>
+      <div id="estado" class="estado" hidden>No hay coincidencias. Continúa escribiendo.</div>
+    </section>
+
+    <footer class="ayuda">
+      <span><kbd>Tab</kbd> completar</span>
+      <span><kbd>Enter</kbd> aceptar</span>
+      <span><kbd>↑</kbd><kbd>↓</kbd> navegar</span>
+      <span><kbd>Esc</kbd> cerrar</span>
+    </footer>
+  </main>
+
+  <script src="caca.js"></script>
+</body>
+</html>
